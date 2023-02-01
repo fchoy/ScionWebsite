@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import styled from 'styled-components'
+import Break from './Components/Break'
+import Footer from './Components/Footer'
+import Header from './Components/Header'
+import History from './Components/History'
+import Motorsports from './Components/Motorsports'
+import Vehicles from './Components/Vehicles'
 
-function App() {
+const Container = styled.div`
+  overflow-x : hidden;
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container>
+      <Header/>
+      <Break/>
+      <History/>
+      <Break/>
+      <Vehicles/>
+      <Break/>
+      <Motorsports/>
+      <Break/>
+      <Footer/>
+    </Container>
+  )
 }
 
-export default App;
+export default App
