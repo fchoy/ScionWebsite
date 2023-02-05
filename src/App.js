@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useRef, useEffect} from 'react'
 import styled from 'styled-components'
 import Break from './Components/Break'
 import Footer from './Components/Footer'
@@ -12,15 +12,46 @@ const Container = styled.div`
 `;
 
 const App = () => {
+
+  const [historyButtonPressed, setHistoryButtonPressed] = useState(false);
+  const [vehiclesButtonPressed, setvehiclesButtonPressed] = useState(false);
+  const [motorsportsButtonPressed, setmotorsportsButtonPressed] = useState(false);
+
+  const historyRef = useRef(null);
+  const vehicleRef = useRef(null);
+  const motorsportsRef = useRef(null);
+
+  useEffect(() => {
+    if(historyButtonPressed === true && historyRef.current){
+      console.log("History Button Pressed!");
+      historyRef.current.focus();
+      setvehiclesButtonPressed(false);
+      setmotorsportsButtonPressed(false);
+    }
+    else if(vehiclesButtonPressed === true && vehicleRef.current){
+      vehicleRef.current.focus();
+      setHistoryButtonPressed(false);
+      setmotorsportsButtonPressed(false);
+    }
+    else if(motorsportsButtonPressed === true && motorsportsRef.current){
+      motorsportsRef.current.focus();
+      setHistoryButtonPressed(false);
+      setvehiclesButtonPressed(false);
+    }
+
+  }, [historyButtonPressed, vehiclesButtonPressed, motorsportsButtonPressed]);
+ 
+
+
   return (
     <Container>
-      <Header/>
+      <Header setHistoryButtonPressed={setHistoryButtonPressed} setvehiclesButtonPressed={setvehiclesButtonPressed} setmotorsportsButtonPressed={setmotorsportsButtonPressed}/>
       <Break/>
-      <History/>
+      <History forwardref={historyRef}/>
       <Break/>
-      <Vehicles/>
+      <Vehicles forwardref={vehicleRef}/>
       <Break/>
-      <Motorsports/>
+      <Motorsports forwardref={motorsportsRef}/>
       <Break/>
       <Footer/>
     </Container>

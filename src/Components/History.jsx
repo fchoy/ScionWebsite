@@ -1,24 +1,42 @@
 import React from 'react'
 import styled from 'styled-components'
 import ScionHistoryImage from '../Images/scionhistoryimage.webp'
-//import ScionHistoryImage2 from '../Images/scionhistoryimage2.jpg'
+import media from '../media';
 
 const Container = styled.div`
     background-color : black;
     height : 810px;
     display : flex;
     flex-direction : row;
+
+    @media ${media.mobile}{
+        height : 100%;
+        width : 100%;
+        flex-direction : column-reverse;
+        padding-bottom : 2.2em;
+    }
+
 `;
 const Left = styled.div`
     flex : 1;
     display : flex;
     flex-direction: column;
+    @media ${media.mobile}{
+        height : 100%;
+        width : 100%;
+        justify-content: center;
+        align-items: center;
+    }
 `;
 const HistoryTitle = styled.h1`
     color : white;
     font-size: 48px;
     padding-left : 50px;
     padding-top : 50px;
+    @media ${media.mobile}{
+        padding : 0;
+        font-size : 2.2em;
+    }
 `;
 const HistoryText = styled.span`
     height : 400px;
@@ -28,15 +46,28 @@ const HistoryText = styled.span`
     color : white;
     line-height: 1.8;
     font-family: 'Cabin', sans-serif;
+
+    @media ${media.mobile}{
+        height : fit-content;
+        font-size : 1.1em;
+        width : fit-content;
+        margin : 0 2%;
+        line-height: 1.4;
+    }
 `;
 const Right = styled.div`
     flex : 1;
     display : flex;
     flex-direction : column;
     justify-content: center;
+
+    @media ${media.mobile}{
+        height : 100%;
+        padding-top : 5%
+    }
 `;
 const HistoryImage = styled.img`
-
+    
 `;
 
 

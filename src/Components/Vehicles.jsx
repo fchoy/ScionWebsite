@@ -6,12 +6,19 @@ import sciontc from "../Images/sciontc.jpg";
 import scionxd from "../Images/scionxd.webp";
 import scioniq from "../Images/scioniq.png";
 import scionfrs from "../Images/scionfrs.png";
+import media from '../media';
 
 const Container = styled.div`
   background-color: black;
   height: 950px;
   display: flex;
   flex-direction: column;
+
+  @media ${media.mobile}{
+    align-items : center;
+    height : fit-content;
+    width: fit-content;
+  }
 `;
 
 const LineupTitle = styled.h1`
@@ -20,6 +27,13 @@ const LineupTitle = styled.h1`
   background-color: black;
   margin: 0 auto;
   padding-top: 20px;
+  @media ${media.mobile}{
+    margin : 0 auto;
+    display : flex;
+    padding : 0;
+    margin : 20px 0;
+    font-size : 2.5em;
+  }
 `;
 
 const VehicleContainer = styled.div`
@@ -29,6 +43,12 @@ const VehicleContainer = styled.div`
   width: fit-content;
   height: fit-content;
   margin: 0 auto;
+
+  @media ${media.mobile}{
+    flex-direction: column;
+    height : fit-content;
+    width : 100%;
+  }
 `;
 
 const VehicleContainerRow = styled.div`
@@ -37,6 +57,13 @@ const VehicleContainerRow = styled.div`
   flex-direction: row;
   margin-top: 40px;
   margin-bottom: 20px;
+
+  @media ${media.mobile}{
+    margin : 0 auto;
+    flex-direction: column;
+    height : 100%;
+    width : 100%;
+  }
 `;
 
 const VehicleImageDiv = styled.div`
@@ -56,6 +83,13 @@ const VehicleImageDiv = styled.div`
   &:hover #text {
     opacity : 1;
   }
+
+  @media ${media.mobile}{
+    position: relative;
+    margin : 0;
+    height : fit-content;
+    width : 100%;
+  }
 `;
 
 const VehicleImage = styled.img`
@@ -66,6 +100,11 @@ const VehicleImage = styled.img`
   padding : 0;
   left: 0;
   top : 0;
+  @media ${media.mobile}{
+    position: static;
+    width : 100%;
+    height : 100%;
+}
 `;
 
 const VehicleImageText = styled.h1`
@@ -80,6 +119,9 @@ const VehicleImageText = styled.h1`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media ${media.mobile}{
+    position: absolute;
+}
 `;
 
 const Lineup = () => {
