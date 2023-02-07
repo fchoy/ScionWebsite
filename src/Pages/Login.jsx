@@ -10,9 +10,18 @@ const Container = styled.div`
     height : 100vh;
     display : flex;
     justify-content: center;
+    //background : linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url(${bg}); //applies a color linearly in a vertical direction (Does same thing as what is written below)
+    background-color : rgba(0,0,0,0.1);
+    background-blend-mode: multiply;
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media ${media.mobile} {
+        width : 100%;
+        margin: 0;
+        background-color : rgba(0,0,0,0);
+    }
 `;
 
 const LoginTitle = styled.span`
