@@ -21,7 +21,6 @@ const Container = styled.div`
     height : 100vh;
     padding-bottom : 4%;
   }
-
 `;
 
 const Title = styled.h1`

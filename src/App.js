@@ -6,14 +6,15 @@ import Header from './Components/Header'
 import History from './Components/History'
 import Motorsports from './Components/Motorsports'
 import Vehicles from './Components/Vehicles'
+import Login from './Pages/Login'
 
-const Container = styled.div`
+/*const Container = styled.div`
   overflow-x : hidden;
-`;
+`;*/
 
 const App = () => {
 
-  const [historyButtonPressed, setHistoryButtonPressed] = useState(false);
+  /*const [historyButtonPressed, setHistoryButtonPressed] = useState(false);
   const [vehiclesButtonPressed, setvehiclesButtonPressed] = useState(false);
   const [motorsportsButtonPressed, setmotorsportsButtonPressed] = useState(false);
 
@@ -39,12 +40,12 @@ const App = () => {
       setvehiclesButtonPressed(false);
     }
 
-  }, [historyButtonPressed, vehiclesButtonPressed, motorsportsButtonPressed]);
+  }, [historyButtonPressed, vehiclesButtonPressed, motorsportsButtonPressed]);*/
  
 
 
   return (
-    <Container>
+    /*<Container>
       <Header setHistoryButtonPressed={setHistoryButtonPressed} setvehiclesButtonPressed={setvehiclesButtonPressed} setmotorsportsButtonPressed={setmotorsportsButtonPressed}/>
       <Break/>
       <History forwardref={historyRef}/>
@@ -54,7 +55,8 @@ const App = () => {
       <Motorsports forwardref={motorsportsRef}/>
       <Break/>
       <Footer/>
-    </Container>
+    </Container>*/
+    <Login/>
   )
 }
 
