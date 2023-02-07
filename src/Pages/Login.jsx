@@ -217,28 +217,63 @@ const LoginButton = styled.button`
     }
 `;
 
-const ForgotPasswordDiv = styled.div`
+const LinksDiv = styled.div`
     width : 40%;
-
+    display : flex;
+    flex-direction : row;
+    align-items: center;
     @media ${media.mobile}{
-        width : 70%;
+        width : fit-content;
+        flex-direction: column;
+    }
+`;
+
+const ForgotPasswordDiv = styled.div`
+    width : fit-content;
+    flex : 1;
+    @media ${media.mobile}{
+        margin-bottom : 5%;
     }
 `;
 
 const ForgotPasswordLink = styled.a`
     width: fit-content;
-    font-size : 1.1em;
+    font-size : 1.2em;
     font-weight : 500;
     color : #f1ad1aea;
-    text-decoration: none;
+    text-decoration: underline;
+    text-decoration-thickness : 2px;   
     &:hover{
-        cursor : pointer;
-        text-decoration: underline;
-        text-decoration-thickness : 2px;   
+        cursor : pointer; 
     }
 
     @media ${media.mobile}{
-        font-size : 1.2em;
+        font-size : 1.3em;
+        color : #ffc23e;
+    }
+`;
+
+const SignupLinkDiv = styled.div`
+    display : flex;
+    flex-direction: row;
+    height : fit-content;
+`;
+
+const SignupLink = styled.a`
+    margin : auto 0;
+    width: fit-content;
+    font-size : 1.2em;
+    font-weight : 500;
+    color : #f1ad1aea;
+    text-decoration: underline;
+    text-decoration-thickness : 2px;      
+    
+    &:hover{
+        cursor : pointer;
+    }
+
+    @media ${media.mobile}{
+        font-size : 1.3em;
         color : #ffc23e;
     }
 `;
@@ -269,9 +304,14 @@ const Login = () => {
                 <Checkbox type="checkbox"/><CheckboxText>Remember Me</CheckboxText>
             </CheckboxDiv>
             <LoginButton>Sign In</LoginButton>
-            <ForgotPasswordDiv>
-                <ForgotPasswordLink>Forgot Password?</ForgotPasswordLink>
-            </ForgotPasswordDiv>
+            <LinksDiv>
+                <ForgotPasswordDiv>
+                    <ForgotPasswordLink>Forgot Password?</ForgotPasswordLink>
+                </ForgotPasswordDiv>
+                <SignupLinkDiv>
+                    <SignupLink>Don't Have an Account?</SignupLink>
+                </SignupLinkDiv>
+            </LinksDiv>
         </LoginDiv>
     </Container>
   )

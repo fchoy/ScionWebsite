@@ -7,6 +7,7 @@ import History from './Components/History'
 import Motorsports from './Components/Motorsports'
 import Vehicles from './Components/Vehicles'
 import Login from './Pages/Login'
+import Signup from './Pages/Signup'
 
 /*const Container = styled.div`
   overflow-x : hidden;
@@ -57,6 +58,7 @@ const App = () => {
       <Footer/>
     </Container>*/
     <Login/>
+    //<Signup/>
   )
 }
 
