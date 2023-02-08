@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import bg from "../Images/signuptc.jpg";
 import media from "../media";
+import EmailOutlinedIcon from '@mui/icons-material/EmailOutlined';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
@@ -43,6 +44,68 @@ const LoginDiv = styled.div`
         height : 90%;
     }
 `;
+
+const EmailDiv = styled.div`
+    width : 40%;
+    height : 11%;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom : 2%;
+    @media ${media.mobile} {
+        width : 70%;
+        height : 15%;
+        margin-bottom : 7%;
+    }
+`;
+
+const EmailText = styled.span`
+    align-self : flex-start;
+    margin-bottom : 1%;
+    font-weight : 500;
+
+    @media ${media.mobile} {
+        font-size : 1em;
+    }
+`;
+
+const EmailIcon = styled(EmailOutlinedIcon)`
+    border-right : 1px solid black;
+
+    &&{
+        width : 8%;
+        @media ${media.mobile} {
+            width : 10%;
+        }
+    }
+`;
+
+const EmailInputDiv = styled.div`
+    height : 80%;
+    width : 100%;
+    display : flex;
+    flex-direction : row;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border : 1px solid black;
+`;
+
+const EmailInput = styled.input`
+    height : fit-content;
+    border : none;
+    outline : none;
+    font-size : 1em;
+    margin-left : 1%;
+    width : 100%;
+
+    &::placeholder{
+        text-align: center;
+    }
+`;
+
+/*--------------------------------------------------------------------------------Username Div------------------------------------------------------------------------------------------*/
 
 const UsernameDiv = styled.div`
     width : 40%;
@@ -270,8 +333,15 @@ const Signup = () => {
     <Container>
       <LoginDiv>
         <LoginTitle>Register</LoginTitle>
+        <EmailDiv>
+          <EmailText>Enter Your Email</EmailText>
+          <EmailInputDiv>
+            <EmailIcon/>
+            <EmailInput type="input" placeholder="Email" />
+          </EmailInputDiv>
+        </EmailDiv>
         <UsernameDiv>
-          <UsernameText>Create Username</UsernameText>
+          <UsernameText>Create a Username</UsernameText>
           <UsernameInputDiv>
             <UsernameIcon />
             <UsernameInput type="input" placeholder="Username" />
@@ -285,7 +355,7 @@ const Signup = () => {
           </PasswordInputDiv>
         </PasswordDiv>
         <PasswordDiv>
-          <PasswordText>Re-enter Password</PasswordText>
+          <PasswordText>Confirm Password</PasswordText>
           <PasswordInputDiv>
             <PasswordIcon />
             <PasswordInput type="password" placeholder="Password" />
