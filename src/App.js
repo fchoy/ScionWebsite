@@ -57,8 +57,8 @@ const App = () => {
       <Break/>
       <Footer/>
     </Container>*/
-    <Login/>
-    //<Signup/>
+    //<Login/>
+    <Signup/>
   )
 }
 
