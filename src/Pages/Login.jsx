@@ -44,6 +44,7 @@ const LoginDiv = styled.div`
     align-items: center;
     @media ${media.mobile} {
         width : 90%;
+        height : 85%;
     }
 `;
 
@@ -301,6 +302,11 @@ const BreakDiv = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom : 2%;
+
+    @media ${media.mobile}{
+        width : 75%;
+        margin-bottom : 5%;
+    }
 `;
 
 const Divider = styled.div`
@@ -316,6 +322,9 @@ const OrText = styled.span`
     text-align: center;
     font-size : 1.1em;
     color : white;
+    @media ${media.mobile}{
+        width : 10%;
+    }
 `;
 
 const OtherLoginDiv = styled.div`
@@ -325,14 +334,18 @@ const OtherLoginDiv = styled.div`
     flex-direction : column;
     justify-content: center;
     align-items: center;
-    padding : 0;
-    margin : 0;
+    @media ${media.mobile}{
+        width : 70%;
+    }
 `;
 
 const GoogleLogin = styled.a`
     width : fit-content;
     height : fit-content;
     text-align : center;
+    @media ${media.mobile}{
+        margin-bottom : 5%;
+    }
 `;
 
 const GoogleImage = styled.img`
@@ -345,11 +358,21 @@ const GoogleImage = styled.img`
         cursor : pointer;
         opacity : 0.9;
     }
+
+    @media ${media.mobile}{
+        width : 100vw;
+        max-width : 90%;
+        height : 91%;
+        max-height : 91%;
+    }
 `;
 const FacebookLogin = styled.a`
     width : fit-content;
     height : fit-content;
     text-align : center;
+    @media ${media.mobile}{
+        margin-bottom : 3%;
+    }
 `;
 
 const FacebookImage = styled.img`
@@ -358,6 +381,11 @@ const FacebookImage = styled.img`
     height : 100%;
     max-height : 100%;
     border-radius: 6px;
+
+    @media ${media.mobile}{
+        width : 100vw;
+        max-width : 90%;
+    }
     
     &:hover{
         cursor : pointer;
