@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import bg from '../Images/loginfrs.jpg'
+import facebooklogin from '../Images/facebooklogin.png'
+import googlelogin from '../Images/googlelogin.jpg'
 import media from '../media';
 
 const Container = styled.div`
@@ -16,6 +18,7 @@ const Container = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
 
     @media ${media.mobile} {
         width : 100%;
@@ -32,7 +35,7 @@ const LoginTitle = styled.span`
 
 const LoginDiv = styled.div`
     width : 50%;
-    height : 60%;
+    height : 70%;
     background-color : #92601e31;
     margin : auto;
     display : flex;
@@ -40,7 +43,7 @@ const LoginDiv = styled.div`
     justify-content: center;
     align-items: center;
     @media ${media.mobile} {
-        width : 80%;
+        width : 90%;
     }
 `;
 
@@ -231,6 +234,7 @@ const LinksDiv = styled.div`
     display : flex;
     flex-direction : row;
     align-items: center;
+    margin-bottom : 2%;
     @media ${media.mobile}{
         width : fit-content;
         flex-direction: column;
@@ -254,6 +258,7 @@ const ForgotPasswordLink = styled.a`
     text-decoration-thickness : 2px;   
     &:hover{
         cursor : pointer; 
+        opacity : 0.9;
     }
 
     @media ${media.mobile}{
@@ -279,6 +284,7 @@ const SignupLink = styled.a`
     
     &:hover{
         cursor : pointer;
+        opacity : 0.9;
     }
 
     @media ${media.mobile}{
@@ -287,6 +293,77 @@ const SignupLink = styled.a`
     }
 `;
 
+const BreakDiv = styled.div`
+    width : 45%;
+    height : fit-content;
+    display : flex;
+    flex-direction : row;
+    align-items: center;
+    justify-content: center;
+    margin-bottom : 2%;
+`;
+
+const Divider = styled.div`
+    width : 45%;
+    height : 1px;
+    border-bottom : 1px solid white;
+    margin : auto 0;
+`;
+
+const OrText = styled.span`
+    width : 5%;
+    flex: 1;
+    text-align: center;
+    font-size : 1.1em;
+    color : white;
+`;
+
+const OtherLoginDiv = styled.div`
+    width : 40%;
+    height: fit-content;
+    display : flex;
+    flex-direction : column;
+    justify-content: center;
+    align-items: center;
+    padding : 0;
+    margin : 0;
+`;
+
+const GoogleLogin = styled.a`
+    width : fit-content;
+    height : fit-content;
+    text-align : center;
+`;
+
+const GoogleImage = styled.img`
+    width : 95%;
+    max-width : 95%;
+    height : 80%;
+    max-height : 80%;
+    border-radius: 6px;
+    &:hover{
+        cursor : pointer;
+        opacity : 0.9;
+    }
+`;
+const FacebookLogin = styled.a`
+    width : fit-content;
+    height : fit-content;
+    text-align : center;
+`;
+
+const FacebookImage = styled.img`
+    width: 85%;
+    max-width : 85%;
+    height : 100%;
+    max-height : 100%;
+    border-radius: 6px;
+    
+    &:hover{
+        cursor : pointer;
+        opacity : 0.9;
+    }
+`;
 const Login = () => {
 
     useEffect(() => {
@@ -312,7 +389,7 @@ const Login = () => {
             <CheckboxDiv>
                 <Checkbox type="checkbox"/><CheckboxText>Remember Me</CheckboxText>
             </CheckboxDiv>
-            <LoginButton>Sign In</LoginButton>
+            <LoginButton type="button">Sign In</LoginButton>
             <LinksDiv>
                 <ForgotPasswordDiv>
                     <ForgotPasswordLink>Forgot Password?</ForgotPasswordLink>
@@ -321,6 +398,15 @@ const Login = () => {
                     <SignupLink>Don't Have an Account?</SignupLink>
                 </SignupLinkDiv>
             </LinksDiv>
+            <BreakDiv>
+                <Divider/>
+                <OrText>or</OrText>
+                <Divider/>
+            </BreakDiv>
+            <OtherLoginDiv>
+                <GoogleLogin><GoogleImage src={googlelogin}/></GoogleLogin>
+                <FacebookLogin><FacebookImage src={facebooklogin}/></FacebookLogin>
+            </OtherLoginDiv>
         </LoginDiv>
     </Container>
   )
