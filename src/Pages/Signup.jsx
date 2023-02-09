@@ -370,7 +370,7 @@ const Signup = () => {
         <SignupButton type="button">Register</SignupButton>
         <LinksDiv>
           <SignupLinkDiv>
-            <SignupLink>Already Have an Account?</SignupLink>
+            <SignupLink href="/login">Already Have an Account?</SignupLink>
           </SignupLinkDiv>
         </LinksDiv>
       </LoginDiv>

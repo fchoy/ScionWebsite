@@ -99,7 +99,7 @@ const LoginDiv = styled.div`
     }
 `;
 
-const LoginItem = styled.button`
+const LoginItem = styled.a`
     border : none;
     background-color: black;
     color : white;
@@ -107,6 +107,8 @@ const LoginItem = styled.button`
     margin : auto 0;
     font-size : 24px;
     font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    margin-right : 2%;
 
     &:hover{
         cursor : pointer;
@@ -133,7 +135,7 @@ const LoginItem = styled.button`
 
 
 
-const Header = ({setHistoryButtonPressed, setvehiclesButtonPressed, setmotorsportsButtonPressed}) => {
+const Header = () => {
 
   return (
     <Container>
@@ -141,14 +143,14 @@ const Header = ({setHistoryButtonPressed, setvehiclesButtonPressed, setmotorspor
             <Logo src={scionlogo}/>
         </LogoDiv>
         <Navbar>
-            <NavbarItem onClick={setHistoryButtonPressed(true)}>History</NavbarItem>
-            <NavbarItem onClick={setvehiclesButtonPressed(true)}>Vehicles</NavbarItem>
-            <NavbarItem onClick={setmotorsportsButtonPressed(true)}>Motorsports</NavbarItem>
+            <NavbarItem>History</NavbarItem>
+            <NavbarItem>Vehicles</NavbarItem>
+            <NavbarItem>Motorsports</NavbarItem>
         </Navbar>
         <LoginDiv>
-            <LoginItem>Signup</LoginItem>
+            <LoginItem href="/login">Login</LoginItem>
             <LoginItem className="headerDivider" style={{"cursor":"default", fontSize: "27px", textDecoration : "none"}}>|</LoginItem>
-            <LoginItem>Login</LoginItem>
+            <LoginItem href="/signup">Signup</LoginItem>
         </LoginDiv>
     </Container>
   )

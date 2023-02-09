@@ -423,7 +423,7 @@ const Login = () => {
                     <ForgotPasswordLink>Forgot Password?</ForgotPasswordLink>
                 </ForgotPasswordDiv>
                 <SignupLinkDiv>
-                    <SignupLink>Don't Have an Account?</SignupLink>
+                    <SignupLink href="/signup">Don't Have an Account?</SignupLink>
                 </SignupLinkDiv>
             </LinksDiv>
             <BreakDiv>
