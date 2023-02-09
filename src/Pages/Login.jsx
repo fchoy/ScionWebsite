@@ -33,7 +33,7 @@ const LoginTitle = styled.span`
     color : black;
 `;
 
-const LoginDiv = styled.div`
+const LoginForm = styled.form`
     width : 50%;
     height : 70%;
     background-color : #92601e31;
@@ -63,7 +63,7 @@ const UsernameDiv = styled.div`
     }
 `;
 
-const UsernameText = styled.span`
+const UsernameText = styled.label`
     align-self : flex-start;
     margin-bottom : 1%;
     font-weight : 500;
@@ -124,7 +124,7 @@ const PasswordDiv = styled.div`
     }
 `;
 
-const PasswordText = styled.span`
+const PasswordText = styled.label`
     align-self : flex-start;
     margin-bottom : 1%;
     font-weight : 500;
@@ -203,7 +203,7 @@ const CheckboxText = styled.span`
     }
 `;
 
-const LoginButton = styled.button`
+const LoginButton = styled.input`
     width : 40%;
     height : 7%;
     margin-top : 1%;
@@ -400,27 +400,27 @@ const Login = () => {
 
   return (
     <Container>
-        <LoginDiv>
+        <LoginForm action="?" method="" onSubmit="">
             <LoginTitle>Login</LoginTitle>
             <UsernameDiv>
-                <UsernameText>Username</UsernameText>
+                <UsernameText for="userinput">Username</UsernameText>
                 <UsernameInputDiv>
-                    <UsernameIcon/><UsernameInput type="input" placeholder='Username'/>
+                    <UsernameIcon/><UsernameInput name="userinput" type="input" placeholder='Username' required/>
                 </UsernameInputDiv>
             </UsernameDiv>
             <PasswordDiv>
-                <PasswordText>Password</PasswordText>
+                <PasswordText for="pwinput">Password</PasswordText>
                 <PasswordInputDiv>                
-                    <PasswordIcon/><PasswordInput type="password" placeholder='Password'/>
+                    <PasswordIcon/><PasswordInput name="pwinput" type="password" placeholder='Password' required/>
                 </PasswordInputDiv>
             </PasswordDiv>
             <CheckboxDiv>
                 <Checkbox type="checkbox"/><CheckboxText>Remember Me</CheckboxText>
             </CheckboxDiv>
-            <LoginButton type="button">Sign In</LoginButton>
+            <LoginButton type="submit" value="Sign In"/>
             <LinksDiv>
                 <ForgotPasswordDiv>
-                    <ForgotPasswordLink>Forgot Password?</ForgotPasswordLink>
+                    <ForgotPasswordLink href="/forgotpassword">Forgot Password?</ForgotPasswordLink>
                 </ForgotPasswordDiv>
                 <SignupLinkDiv>
                     <SignupLink href="/signup">Don't Have an Account?</SignupLink>
@@ -435,7 +435,7 @@ const Login = () => {
                 <GoogleLogin><GoogleImage src={googlelogin}/></GoogleLogin>
                 <FacebookLogin><FacebookImage src={facebooklogin}/></FacebookLogin>
             </OtherLoginDiv>
-        </LoginDiv>
+        </LoginForm>
     </Container>
   )
 }
