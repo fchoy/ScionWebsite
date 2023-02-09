@@ -68,6 +68,7 @@ const EmailText = styled.span`
     margin-bottom : 1%;
     font-weight : 500;
     color : #d3d0d0;
+    font-size : 1em;
 
     @media ${media.mobile} {
         font-size : 1.1em;
@@ -100,7 +101,6 @@ const EmailInputDiv = styled.div`
 `;
 
 const EmailInput = styled.input`
-    height : fit-content;
     border : none;
     outline : none;
     font-size : 1em;
