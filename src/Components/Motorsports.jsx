@@ -156,7 +156,7 @@ const SlideImage = styled.img`
   }
 `;
 
-const Motorsports = () => {
+const Motorsports = ({motorsportsRef}) => {
   const [slideIndex, setSlideIndex] = useState(0);
 
   const handleClick = (direction) => {
@@ -169,7 +169,7 @@ const Motorsports = () => {
   }
 
   return (
-    <Container>
+    <Container ref={motorsportsRef}>
       <Title>Motorsports</Title>
 
       <ArrowContainer className="topArrowContainer" direction="left" onClick={() => handleClick("left")}>

@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import scionlogo from '../Images/scionlogo.png'
 import media from '../media';
+import History from './History';
+import Motorsports from './Motorsports';
+import Vehicles from './Vehicles';
 
 const Container = styled.div`
     width : 100%;
@@ -133,10 +136,7 @@ const LoginItem = styled.a`
     }
 `;
 
-
-
 const Header = () => {
-
   return (
     <Container>
         <LogoDiv>

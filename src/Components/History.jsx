@@ -71,9 +71,9 @@ const HistoryImage = styled.img`
 `;
 
 
-const History = () => {
+const History = ({historyRef}) => {
   return (
-    <Container>
+    <Container ref={historyRef}>
         <Left>
             <HistoryTitle>Scion</HistoryTitle>
             <HistoryText>

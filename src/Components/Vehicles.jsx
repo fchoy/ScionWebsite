@@ -124,9 +124,9 @@ const VehicleImageText = styled.h1`
 }
 `;
 
-const Lineup = () => {
+const Lineup = ({vehiclesRef}) => {
   return (
-    <Container>
+    <Container ref={vehiclesRef}>
       <LineupTitle>Vehicles</LineupTitle>
       <VehicleContainer>
 
